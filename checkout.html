@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <title>Complete  | Quick Order</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <br>
+        <div class="card col-md-8 col-sm-12 mx-auto">
+            <div class="card-body">
+                <form action="" id="form">
+                    <div class="form-group">
+                        <label for="client-name">Client's name</label>
+                        <input type="text" name="client-name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-number">Client's phone number</label>
+                        <input type="text" name="client-phone" class="form-control" id="client-phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-email">Client's email</label>
+                        <input type="email" name="client-email" id="client-email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-delivery-address">Client's delivery address</label>
+                        <textarea name="client-delivery-address" id="client-delivery-address" cols="30" rows="2" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additional-notes">Additional notes</label>
+                        <textarea name="additional-notes" class="form-control" id="additional-notes" cols="30" rows="3"></textarea>
+                    </div>
+                    
+                    <button type="button" class="btn btn-block btn-primary" id="checkout-btn">Proceed to checkout</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script src="js/checkout.js"></script>
+    <script>
+            $(document).ready(
+                /**
+                 * when the button is clicked, post the form details to be saved in the db
+                 * after, create the invoice on hubtel
+                 * and then, redirect to hubtel checkout
+                 */
+            
+                 $("#checkout-btn").click(postFormDetails)
+            
+            );
+    </script>
+</body>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edit Item | Pricing App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <br>
+        <div class="card col-8 mx-auto">
+            <div class="card-body">
+                <form action="">
+                    <h4>Edit Item</h4>
+                    <br>
+                    <div class="form-group">
+                        <label for="item-name">Name</label>
+                        <input type="text" name="name" class="form-control" id="item-name">
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="impression-cost">Impression Cost</label>
+                                <input type="number" name="ic" class="form-control" id="ic">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="fixed-cost">Fixed Cost</label>
+                                <input type="number" name="fc" class="form-control" id="fc">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="option">Option</label>
+                        <input type="text" name="option" class="form-control" id="option">
+                    </div>
+                    
+                    <br>
+                    <button type="button" class="btn btn-block btn-primary" id="save-item">Save</button>
+                </form>
+            </div>
+        </div>
+        
+        
+    </div>
+    <script src="js/edit-item.js"></script>
+    <script>
+        //function calls are from js/edit-item.js
+        $(document).ready(
+
+            /**
+            *populate form with details of item to edit
+            */
+            populateForm(),
+
+
+            /**
+            * on clicking the save button, data should be saved to db, and then return to the items table
+            */
+            $("#save-item").click(saveItem)
+        );
+    </script>
+</body>
+</html>

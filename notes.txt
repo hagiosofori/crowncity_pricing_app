@@ -1,0 +1,97 @@
+
+yes so I'm changing it to go to a checkout form where we capture 
+
+: name, 
+: number, 
+: email, 
+: delivery address and 
+: additional note before 
+: going to hubtel (so remove the additional note on the pricing page)
+
+
+TASK LIST
+
+DONE: ic and fc in the db should be corrected to the proper decimal places.
+
+: on selecting option for an item, the unit price and the total price should be calculated and displayed
+
+: submission of the form, storing of data, and redirection to the checkout form
+
+: storage of client checkout details and redirection to hubtel for payment. [ order should indicate it's payment status ]
+
+: display various tabs for editing each of the db tables
+
+: navigating to admin panel from home screen
+
+: data entry from the pdf to the db
+
+
+
+FORMULAS
+************************
+UNIT PRICE = ( (QUANTITY X IC) + FC ) / QUANTITY 
+TOTAL PRICE = (QUANTITY X IC) + FC 
+
+
+
+HUBTEL INVOICE CREATION SAMPLE OBJECT
+****************************************
+
+
+POST /v1/merchantaccount/onlinecheckout/invoice/create HTTP/1.1
+  Host: api.hubtel.com/merchantaccount
+  Authorization: Basic a2hzcw1fb3U6bWdhaHdpYW8=
+  Content-Type: application/json
+  Cache-Control: no-cache
+
+ {
+  "invoice": {
+    "items":{
+    "item_0": {
+      "name": "T Shirt",
+      "quantity": 2,
+      "unit_price": "35.0",
+      "total_price": "70.0",
+      "description": "Order of 2 Shirts"
+    },
+    "item_1": {
+      "name": "Polo Shirt",
+      "quantity": 1,
+      "unit_price": "25.0",  
+      "total_price": "0.0",
+      "description": "Order of 1 Polo Shirt"
+    },
+    "item_2": {
+      "name": "Old Navy Jeans",
+      "quantity": 1,
+      "unit_price": "25.0",
+      "total_price": "0.0",
+      "description": ""
+    }
+	},
+    "taxes": {
+      
+    },
+    "total_amount": 120,
+    "description": "Description of the invoice here"
+  },
+  "store": {
+    "name": "T Shirt Company",
+    "tagline": "Tagline of the online store",
+    "postal_address": "Box 10770 Accra - Ghana",
+    "phone": "233244124660",
+    "logo_url": "https://company-logo-final.png",
+    "website_url": "https://company.com"
+  },
+  "custom_data": {
+    
+  },
+  "actions": {
+    "cancel_url": "http://company.com",
+    "return_url": "http://company.com"
+  }
+}
+
+
+
+pausing with invoice to work on admin side.
